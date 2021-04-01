@@ -34,7 +34,10 @@ class Runner:
         append_file.read()
         target_file = FileEntity.FileEntity()
         target_file.path = self.target[i][0]
-        target_file.append(append_file.content)
+        if os.path.isfile(self.target[i][0]):
+            target_file.append(append_file.content)
+        else:
+            target_file.rewrite(append_file.content)
         return None
 
     def replace(self, i: int) -> None:
