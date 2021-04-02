@@ -7,7 +7,6 @@ ROUTE_DIR = '/home/ubuntu/'
 
 def run() -> None:
     r = Runner.Runner()
-    r.gather_targets()
     r.run()
     return None
 
